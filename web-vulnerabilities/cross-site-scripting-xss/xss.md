@@ -37,26 +37,28 @@ Source (data comes in from here) -> Sink (where the data ends)
 # Types of XSS
 
 ## Reflected
-- reflected off the web server
+- data received by a HTTP request
+- includes arbitrary (usually malicious) JS
 - usually in the form of some malicious javascript
-- the script isn't stored anywhere
-- reflected directly back to the user (intended victim)
-- usually looks like a specially crafted url, can rely on phishing
+- the script isn't stored anywhere (non-persistent)
+- the response is reflected or echoed directly back to the user (intended victim)
+- usually looks like a specially crafted url, phishing
 - do not click links!
 
 ## Stored or Persistent
 - injection is permanently stored, such as on a target web server
 - can include databases, message forums, logs, comment fields
 - user requests this information, which is actually a malicious script
-- executes
+- executes on victim's browser / machine
 
 ## DOM-Based
-- DOM = Document Object Model
+- DOM = Document Object Model, an interface that represents HTML/XML as a hierarchical tree structure (nodes like div's)
 - the data flow never leaves the browser
 - JS can programmatically interact with the DOM
 - can be reflected or stored
-- happens when browser parses page's content and inserted JS is executed (not parsed by a server, or even sent to a server)
-- Source and Sink for DOM Based vulns
+- happens when browser parses page's content and inserted JS is executed (not parsed by a server, or even sent to a server, similar to reflected)
+
+### Source and Sink for DOM Based vulns
 
 Source:
 - JS property accepting data that could be controlled by the attacker
@@ -71,6 +73,8 @@ Sinks:
 
 
 # Common Causes
+
+
 
 # Real Examples
 
