@@ -78,6 +78,9 @@ Sinks:
 # ReactJS: Some preventions built-in
 ... but shouldn't be 100% trusted, especially when crafting your own methods.
 - React JSX auto escape, read more here: [JSX Prevents Injections Attacks](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
+- Dangerous function named for clarity and warning: [dangerouslySetInnerHTML - Read more from React Docs](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)
+
+You should still remember to sanitize.
 
 # Real Examples
 
