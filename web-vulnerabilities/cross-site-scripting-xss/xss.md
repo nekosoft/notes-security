@@ -1,10 +1,13 @@
-# Web Vulnerabilities: XSS
+# Web Vulnerabilities: Cross-Site Scripting (XSS)
 
 ### Table of Contents
 
 - [Overview](#overview)
 - [What is XSS?](#what-is-xss)
 - [Types of XSS](#types-of-xss)
+  - [Reflected](#reflected)
+  - [Stored or Persistent](#stored-or-persistent)
+  - [DOM-based](#dom-based)
 
 # Overview
 An important part of developing web applications is data sanitization, otherwise you could leave a web application vulnerable.
@@ -29,7 +32,7 @@ Injection occurs when:
 Data enters a web application, which is sent to an interpreter and parsed
 Data is sent back to the web user, without being validated for malicious content
 
-Source (data comes in from here -> Sink (where the data ends)
+Source (data comes in from here) -> Sink (where the data ends)
 
 # Types of XSS
 
@@ -51,8 +54,8 @@ Source (data comes in from here -> Sink (where the data ends)
 - DOM = Document Object Model
 - the data flow never leaves the browser
 - JS can programmatically interact with the DOM
-can be reflected or stored
-happens when browser parses page's content and inserted JS is executed (not parsed by a server, or even sent to a server)
+- can be reflected or stored
+- happens when browser parses page's content and inserted JS is executed (not parsed by a server, or even sent to a server)
 - Source and Sink for DOM Based vulns
 
 Source:
@@ -60,7 +63,7 @@ Source:
 - properties such as location.search, document.referrer string, document.cookie string
 
 Sinks:
-- potentially dangeours JS functions or DOM objects
+- potentially dangerous JS functions or DOM objects
 - cause harm or unintended effects by the user, due to the malicious data injected
 - sink because it parses the argument as JS
 - example: document.body.innerHTML = allows attacker to inject malicious HTML and execute arbitrary JS
