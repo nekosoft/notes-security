@@ -10,13 +10,7 @@
   - [DOM-based](#dom-based)
 
 # Overview
-Cross-Site Scripting (XSS) attack is when malicious scripts can be injected into a website. XSS can happen at any point you allow untrusted data to flow through your application. Without proper handling, the data may get interpreted or parsed and executed to an unsuspecting user. The goal of XSS is generally retrieving sensitive information from an unsuspecting user.
-
-Consider the following scenario:
-
-
-
-The web application accepts data as if it is from a trusted source, and is interpreted or parsed to execute in the user's browser or their machine. XSS can happen at any point data that user input isn't encoded, validated and/or sanitized. 
+Cross-Site Scripting (XSS) attack is when malicious scripts can be injected into a website. XSS can happen at any point you allow untrusted data to flow through your application. Without proper handling (such as encoding, validation and sanitization), the data may get interpreted or parsed and executed to an unsuspecting user. The goal of XSS is generally retrieving sensitive information from an unsuspecting user.
 
 Injection occurs when:
 
