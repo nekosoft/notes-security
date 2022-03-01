@@ -10,10 +10,26 @@
   - [DOM-based](#dom-based)
 
 # Overview
-An important part of developing web applications is data sanitization, otherwise you could leave a web application vulnerable.
+Cross-Site Scripting (XSS) attack is when malicious scripts can be injected into a website. XSS can happen at any point you allow untrusted data to flow through your application. Without proper handling, the data may get interpreted or parsed and executed to an unsuspecting user. The goal of XSS is generally retrieving sensitive information from an unsuspecting user.
+
+Consider the following scenario:
+
+
+
+The web application accepts data as if it is from a trusted source, and is interpreted or parsed to execute in the user's browser or their machine. XSS can happen at any point data that user input isn't encoded, validated and/or sanitized. 
+
+Injection occurs when:
+
+1. Data enters a web application, which is sent to an interpreter and parsed
+2. Data is sent back to the web user, without being validated for malicious content
+
+The above can also be described as Sources and Sinks, where:
+**Source** (data comes in from here) -> **Sink** (where the data ends)
+
 
 # What is XSS?
-- malicious scripts can be injected into websites
+
+- malicious scripts can be injected into websites via a http request
 - malicious code is sent to or executed in the victim's browser
 - web application believes the injection came from a trusted source
 - depending on how the application interpets and parses the data, this puts a user at risk
@@ -25,14 +41,6 @@ An important part of developing web applications is data sanitization, otherwise
 - redirect the user to attacker controlled web content
 - perform malicious operations on user's machine
 
-# Injection
-
-Injection occurs when:
-
-Data enters a web application, which is sent to an interpreter and parsed
-Data is sent back to the web user, without being validated for malicious content
-
-Source (data comes in from here) -> Sink (where the data ends)
 
 # Types of XSS
 
@@ -58,6 +66,7 @@ Source (data comes in from here) -> Sink (where the data ends)
 - can be reflected or stored
 - happens when browser parses page's content and inserted JS is executed (not parsed by a server, or even sent to a server, similar to reflected)
 
+
 ### Source and Sink for DOM Based vulns
 
 Source:
@@ -79,8 +88,6 @@ Sinks:
 ... but shouldn't be 100% trusted, especially when crafting your own methods.
 - React JSX auto escape, read more here: [JSX Prevents Injections Attacks](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
 - Dangerous function named for clarity and warning: [dangerouslySetInnerHTML - Read more from React Docs](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)
-
-You should still remember to sanitize.
 
 # Real Examples
 
