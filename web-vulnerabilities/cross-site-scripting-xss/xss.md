@@ -75,6 +75,9 @@ Sinks:
 # Common Causes
 
 
+# ReactJS: Some preventions built-in
+... but shouldn't be 100% trusted, especially when crafting your own methods.
+- React JSX auto escape, read more here: [JSX Prevents Injections Attacks](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
 
 # Real Examples
 
